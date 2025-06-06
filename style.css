@@ -1,0 +1,191 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Fira Sans', 'Segoe UI', sans-serif;
+  background: linear-gradient(145deg, #0f2027, #203a43, #2c5364);
+  color: #e0f7fa;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  padding: 60px 20px;
+}
+
+#logoutDiv {
+  position: absolute; /* or use 'fixed' if you want it to stay when scrolling */
+  top: 20px;
+  right: 20px;
+}
+/* Header */
+h1 {
+  font-size: 3rem;
+  color: #00f7ff;
+  margin-bottom: 40px;
+  text-shadow: 0 0 10px rgba(0, 247, 255, 0.5);
+  animation: fadeInDown 1s ease-out;
+}
+h2 {
+  font-size: 2rem;
+  color: #00f7ff;
+  margin-bottom: 30px;
+  text-shadow: 0 0 10px rgba(0, 247, 255, 0.5);
+  animation: fadeInDown 1.05s ease-out;
+}
+/* Form */
+form {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 40px;
+  animation: fadeIn 1.2s ease-in;
+}
+
+input[type='text'] {
+  padding: 12px 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid #00f7ff;
+  border-radius: 10px;
+  color: #e0f7fa;
+  font-size: 16px;
+  width: 250px;
+  backdrop-filter: blur(4px);
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type='text']:focus {
+  border-color: #00ffc3;
+  box-shadow: 0 0 8px #00ffc3;
+  outline: none;
+}
+.deleteBtn {
+  background-color: rgb(230, 227, 227);
+  padding: 4px 7px;
+  /* color: #0f2027;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease; */
+  border: none;
+  border-radius: 8px;
+  opacity: 1;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+.deleteBtn:hover {
+  background-color: rgb(230, 227, 227);
+  opacity: 0.8;
+  transform: none;
+}
+.deleteBtn:active {
+  background-color: rgb(230, 227, 227);
+  opacity: 0.6;
+}
+
+/* Button */
+button {
+  padding: 12px 20px;
+  background-color: #00f7ff;
+  color: #0f2027;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #00ffc3;
+  transform: translateY(-2px);
+}
+
+#saveBtn {
+  margin-top: 15px;
+}
+
+/* Result Box */
+#result {
+  opacity: 0;
+  transform: translateY(20px);
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(8px);
+  padding: 25px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  width: 360px;
+  max-width: 90%;
+  animation: slideFadeIn 0.8s ease-out forwards;
+  border: 1px solid rgba(0, 247, 255, 0.1);
+}
+#toggle-display-log-btn {
+  margin-top: 15px;
+  animation: fadeIn 1.2s ease-in;
+}
+
+#result h3 {
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  color: #00ffc3;
+}
+#displayLog h3 {
+  margin-bottom: 10px;
+  color: #00ffc3;
+}
+
+#displayLog hr {
+  margin: 10px 0px;
+}
+
+#deleteAllLogsDiv {
+  width: 300px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#deleteAllLogsDiv button {
+  width: 80%;
+  background-color: rgb(232, 88, 88);
+  font-size: 0.9rem;
+  padding: 5px 0px;
+}
+
+#logoutDiv button {
+  animation: fadeIn 1.2s ease-in;
+}
+/* Animations */
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

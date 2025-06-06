@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="auth-style.css" />
+  </head>
+  <body>
+    <div class="auth-container">
+      <form id="signupForm">
+        <h3>Sign Up</h3>
+
+        <input type="text" id="signupName" placeholder="Name" required />
+
+        <input
+          type="email"
+          id="signupEmail"
+          placeholder="Email"
+          autocomplete="off"
+          required
+        />
+
+        <input
+          type="password"
+          id="signupPassword"
+          placeholder="Password"
+          required
+        />
+
+        <input
+          type="password"
+          id="signupConfirmPassword"
+          placeholder="Confirm Password"
+          required
+        />
+
+        <button type="submit">Create Account</button>
+      </form>
+
+      <div
+        id="spinner"
+        style="display: none; text-align: center; margin-top: 15px"
+      >
+        <div class="loader"></div>
+      </div>
+
+      <p>Already have an account? <a href="login.html">Log in</a></p>
+    </div>
+
+    <script src="signup.js"></script>
+  </body>
+</html>

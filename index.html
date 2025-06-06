@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Weather Logger</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <div id="logoutDiv"><button id="logoutBtn">Log out</button></div>
+    <h2>Hi, <span id="display-username"></span></h2>
+    <h1>Weather Logger</h1>
+    <form id="weatherForm">
+      <input
+        type="text"
+        id="cityInput"
+        placeholder="Enter city name"
+        required
+      />
+      <button type="submit">Get Weather</button>
+    </form>
+
+    <div id="result"></div>
+    <button id="saveBtn" style="display: none">Save Log</button>
+
+    <button id="toggle-display-log-btn">Show Log</button>
+    <div id="deleteAllLogsDiv" style="margin-top: 25px"></div>
+    <!-- Display logs that contains each city weather data -->
+    <div id="displayLog" style="margin-top: 10px"></div>
+    <script src="main.js"></script>
+  </body>
+</html>

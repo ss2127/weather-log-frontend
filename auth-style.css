@@ -1,0 +1,125 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Fira Sans', 'Segoe UI', sans-serif;
+  background: linear-gradient(145deg, #0f2027, #203a43, #2c5364);
+  color: #e0f7fa;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+/* Auth Container */
+.auth-container {
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid #00f7ff;
+  border-radius: 16px;
+  padding: 35px 25px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 247, 255, 0.3);
+  backdrop-filter: blur(10px);
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Form title */
+.auth-container h3 {
+  text-align: center;
+  color: #00f7ff;
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+  text-shadow: 0 0 10px rgba(0, 247, 255, 0.4);
+}
+
+/* Inputs */
+.auth-container input {
+  width: 100%;
+  padding: 12px 16px;
+  margin-bottom: 16px;
+  font-size: 1rem;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid #00f7ff;
+  color: #e0f7fa;
+  backdrop-filter: blur(4px);
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+.auth-container input:focus {
+  border-color: #00ffc3;
+  box-shadow: 0 0 6px #00ffc3;
+  outline: none;
+}
+
+.auth-container input::placeholder {
+  color: #a8dadd;
+}
+
+/* Buttons */
+.auth-container button {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: #00f7ff;
+  color: #00303f;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.auth-container button:hover {
+  background-color: #00ffc3;
+}
+
+/* Link paragraph */
+.auth-container p {
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: 14px;
+}
+
+.auth-container a {
+  color: #00f7ff;
+  text-decoration: none;
+}
+
+.auth-container a:hover {
+  text-decoration: underline;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive tweaks */
+@media (max-width: 480px) {
+  .auth-container {
+    padding: 30px 20px;
+  }
+
+  .auth-container h3 {
+    font-size: 1.6rem;
+  }
+
+  .auth-container input,
+  .auth-container button {
+    font-size: 0.95rem;
+  }
+}
