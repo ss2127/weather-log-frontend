@@ -49,7 +49,7 @@ form.addEventListener('submit', async (e) => {
     resultDiv.innerHTML = `
       <h3>${data.city}, ${data.countryCode}</h3>
       <p>Temperature: ${data.temperature}°C</p>
-      <p>Description: ${data.description}</p>
+      <p>Condition: ${data.description}</p>
       <p> <img src="${data.iconUrl}" alt="Weather icon" style="width: 40%"></p>
       <p>Local Time: ${data.localTime}</p>
     `;
@@ -163,7 +163,7 @@ toggleDisplayLogBtn.addEventListener('click', async () => {
           tempP.textContent = `Temperature: ${logData.temperature}°C`;
 
           const descP = document.createElement('p');
-          descP.textContent = `Description: ${logData.description}`;
+          descP.textContent = `Condition: ${logData.description}`;
 
           const localTimeP = document.createElement('p');
           localTimeP.textContent = `Local Time: ${logData.localTime}`;
