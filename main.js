@@ -29,7 +29,7 @@ form.addEventListener('submit', async (e) => {
   try {
     //
     const res = await fetch(
-      'http://127.0.0.1:3000/api/v1/weatherLogs/display',
+      'https://weather-log-backend.onrender.com/api/v1/weatherLogs/display',
       {
         method: 'POST',
         headers: {
@@ -69,14 +69,17 @@ saveBtn.addEventListener('click', async () => {
   const token = localStorage.getItem('token');
 
   try {
-    const res = await fetch('http://127.0.0.1:3000/api/v1/weatherLogs/save', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${token}`,
-      },
-      body: JSON.stringify(currentWeather),
-    });
+    const res = await fetch(
+      'https://weather-log-backend.onrender.com/api/v1/weatherLogs/save',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify(currentWeather),
+      }
+    );
 
     if (!res.ok) {
       if (res.status === 401) {
@@ -100,13 +103,16 @@ saveBtn.addEventListener('click', async () => {
 toggleDisplayLogBtn.addEventListener('click', async () => {
   const token = localStorage.getItem('token');
   try {
-    const res = await fetch('http://127.0.0.1:3000/api/v1/weatherLogs', {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${token}`,
-      },
-    });
+    const res = await fetch(
+      'https://weather-log-backend.onrender.com/api/v1/weatherLogs',
+      {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
     if (res.status === 401 || res.status === 403) {
       alert('Session expired or unauthorized. Please log in again.');
       localStorage.removeItem('token');
@@ -184,7 +190,7 @@ toggleDisplayLogBtn.addEventListener('click', async () => {
             try {
               const id = this.dataset.id;
               const res = await fetch(
-                `http://127.0.0.1:3000/api/v1/weatherLogs/save/${id}`,
+                `https://weather-log-backend.onrender.com/api/v1/weatherLogs/save/${id}`,
                 {
                   method: 'DELETE',
                   headers: {
@@ -208,7 +214,7 @@ toggleDisplayLogBtn.addEventListener('click', async () => {
         deleteAllBtn.addEventListener('click', async function () {
           try {
             const res = await fetch(
-              'http://127.0.0.1:3000/api/v1/weatherLogs',
+              'https://weather-log-backend.onrender.com/api/v1/weatherLogs',
               {
                 method: 'GET',
                 headers: {
@@ -231,7 +237,7 @@ toggleDisplayLogBtn.addEventListener('click', async () => {
             if (!confirmed) return;
 
             const delRes = await fetch(
-              'http://127.0.0.1:3000/api/v1/weatherLogs/save',
+              'https://weather-log-backend.onrender.com/api/v1/weatherLogs/save',
               {
                 method: 'DELETE',
                 headers: {
@@ -270,12 +276,15 @@ toggleDisplayLogBtn.addEventListener('click', async () => {
 
 logoutBtn.addEventListener('click', async () => {
   try {
-    const res = await fetch('http://127.0.0.1:3000/api/v1/users/logout', {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
+    const res = await fetch(
+      'https://weather-log-backend.onrender.com/api/v1/users/logout',
+      {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      }
+    );
 
     if (!res.ok) throw new Error(`Logout failed: ${res.status}`);
     await res.json();
