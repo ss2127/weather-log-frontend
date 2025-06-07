@@ -19,11 +19,14 @@ signupForm.addEventListener('submit', async (e) => {
   }
 
   try {
-    const res = await fetch('http://127.0.0.1:3000/api/v1/users/signup', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name, email, password, confirmPassword }),
-    });
+    const res = await fetch(
+      'https://weather-log-backend.onrender.com/api/v1/users/signup',
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, password, confirmPassword }),
+      }
+    );
 
     const data = await res.json();
     spinner.style.display = 'none';
